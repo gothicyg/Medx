@@ -1,0 +1,28 @@
+{% extends 'medx/base.html' %}
+{% block page_header %}
+  <h3>{{ Book }}</h3>
+{% endblock page_header %}
+
+{% block content %}
+ 
+ <p>
+   <a href="{% url 'medx:new_entry' book.id %}">Add new entry</a>
+ </p>
+ 
+ {% for entry in entries %}
+   <div class="card mb-3">
+     <h4 class="card-header">
+       {{ entry.date_added|date:'M d, Y h:i' }}
+       <small><a href="{% url 'medx:edit_entry' entry.id %}">
+         edit entry</a></small>
+     </h4>
+     <div class="card-body">
+       {{ entry.text|linebreaks }}
+     </div>
+   </div> 
+  {% empty %}
+   <p> There are no entries for this book yet. </p>
+ {% endfor %}
+ 
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends "medx/base.html" %}
+{% block content %}
+
+ <p><a href="{% url 'medx:book' book.id%}"> {{ book }}</a></p>
+ <p>Edit entry:</p>
+ <form action="{% url 'medx:edit_entry' entry.id %}" method='post'>
+   {%csrf_token %}
+   {{ form.as_p }}
+   <button name="submit">Save chnages</button>
+ </form>
+{% endblock content %}

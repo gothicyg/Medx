@@ -1,0 +1,10 @@
+{% extends "medx/base.html" %}
+{% block content %}
+ <p> Add a new Book: </p>
+ <form action="{% url 'medx:new_book' %}" method='post'>
+   {% csrf_token %}
+   {{ form.as_p }}
+   <button name="submit"> Add book </button>
+ </form>
+
+{% endblock content %}
