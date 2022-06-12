@@ -1,4 +1,4 @@
-{% extends "medx/base.html "%}
+{% extends "medx/base.html" %}
 {% block content %}
   <form method="post" action="{% url 'users:register' %}">
        {% csrf_token %}
