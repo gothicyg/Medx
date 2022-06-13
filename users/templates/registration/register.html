@@ -4,7 +4,7 @@
        {% csrf_token %}
        {{ form.as_p }}
 
-       <button name="submit">Regsiter</button>
+       <button name="submit">Register</button>
        <input type="hidden" name="next" value="{% url 'medx:index'%}" />
   </form>
 
