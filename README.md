@@ -1,0 +1,2 @@
+# Medx
+Django project
